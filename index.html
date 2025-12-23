@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yunusa Jibrin | ML Engineer Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f4f4f4;
+        }
+
+        /* Header/Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            animation: fadeInDown 1s;
+        }
+
+        .hero .tagline {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+
+        .hero-links {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            background: white;
+            color: #667eea;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: inline-block;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid white;
+            color: white;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Section Styling */
+        section {
+            padding: 60px 20px;
+            background: white;
+            margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            color: #667eea;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: #764ba2;
+            border-radius: 2px;
+        }
+
+        /* About Section */
+        .about-content {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .profile-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #667eea;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            color: #555;
+        }
+
+        /* Projects Grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .project-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .project-content {
+            padding: 25px;
+        }
+
+        .project-content h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 1.4rem;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 15px 0;
+        }
+
+        .tag {
+            background: #f0f0f0;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .project-link {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .project-link:hover {
+            color: #764ba2;
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .skill-category {
+            background: #f9f9f9;
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+        }
+
+        .skill-category h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+
+        .skill-category ul {
+            list-style: none;
+        }
+
+        .skill-category li {
+            padding: 8px 0;
+            color: #555;
+        }
+
+        .skill-category li::before {
+            content: "✓ ";
+            color: #764ba2;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+        /* Contact Section */
+        .contact-content {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            transition: transform 0.3s;
+        }
+
+        .contact-icon:hover {
+            transform: scale(1.1);
+        }
+
+        .contact-item a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        /* Footer */
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 40px;
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero .tagline {
+                font-size: 1rem;
+            }
+
+            .about-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Hero Section -->
+    <div class="hero">
+        <h1>Yunusa Jibrin</h1>
+        <p class="tagline">Machine Learning Engineer | Building AI Solutions</p>
+        <div class="hero-links">
+            <a href="#projects" class="btn">View Projects</a>
+            <a href="#contact" class="yunusajib01@gmail.com">Get In Touch</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- About Section -->
+        <section id="about">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <img src="my-pic.webp" alt="Yunusa Jibrin" class="profile-img">
+                <!-- REPLACE: Add your photo URL above -->
+
+                <div class="about-text">
+                    <p>
+                        <strong>Welcome to my portfolio!</strong> I'm a Machine Learning Engineer passionate about
+                        building production-ready AI systems that solve real-world problems.
+                    </p>
+                    <p>
+                        My expertise spans <strong>Computer Vision, Natural Language Processing, and MLOps</strong>. I
+                        specialize in taking ML projects from research to deployment, with focus on performance
+                        optimization and scalability.
+                    </p>
+                    <p>
+                        Currently exploring <strong>Large Language Models, RAG systems, and GPU-accelerated
+                            computing</strong> to build intelligent applications that make a difference.
+                    </p>
+                    <!-- EDIT: Customize the paragraphs above with your story -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects">
+            <h2>Featured Projects</h2>
+            <div class="projects-grid">
+
+                <!-- Project 1: Facial Attribute Detection -->
+                <div class="project-card">
+                    <div class="project-img">🎭 Computer Vision</div>
+                    <!-- REPLACE: Add screenshot: <img src="path/to/screenshot.png" class="project-img"> -->
+
+                    <div class="project-content">
+                        <h3>Multi-Task Facial Attribute Prediction</h3>
+                        <p>
+                            Progressive CNN architecture achieving 84.9% gender accuracy. Demonstrates systematic model
+                            improvement and production deployment challenges.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">TensorFlow</span>
+                            <span class="tag">Computer Vision</span>
+                            <span class="tag">Deep Learning</span>
+                            <span class="tag">Streamlit</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/yunusajib/multitask-age-detection-ml" class="project-link"
+                                target="_blank">GitHub →</a>
+                            <a href="https://age-detection-ml.streamlit.app/" class="project-link" target="_blank">Live
+                                Demo →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2: RAG System -->
+                <div class="project-card">
+                    <div class="project-img">🧠 NLP & RAG</div>
+                    <!-- REPLACE: Add screenshot -->
+
+                    <div class="project-content">
+                        <h3>QwenRAG PDF Search</h3>
+                        <p>
+                            Production-grade RAG system for PDF Q&A with automatic citations. 10-15x performance boost
+                            through GPU optimization.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">LangChain</span>
+                            <span class="tag">ChromaDB</span>
+                            <span class="tag">Qwen2.5</span>
+                            <span class="tag">RAG</span>
+                            <span class="tag">Gradio</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/yunusajib/QwenRAG-PDF-Search" class="project-link"
+                                target="_blank">GitHub →</a>
+                            <a href="https://youtu.be/v-ciwaRasvU" class="project-link" target="_blank">Demo Video →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3: Add your third project -->
+                <div class="project-card">
+                    <div class="project-img">⚙️ MLOps</div>
+                    <!-- REPLACE: Add screenshot when project is ready -->
+
+                    <div class="project-content">
+                        <h3>ML Model Monitoring Dashboard</h3>
+                        <p>
+                            <em>Coming Soon:</em> Real-time model monitoring with drift detection and performance
+                            tracking. FastAPI + Prometheus + Grafana.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">MLOps</span>
+                            <span class="tag">FastAPI</span>
+                            <span class="tag">Monitoring</span>
+                            <span class="tag">Docker</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">In Development</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- ADD: More projects as you build them -->
+
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills">
+            <h2>Technical Skills</h2>
+            <div class="skills-grid">
+
+                <div class="skill-category">
+                    <h3>Machine Learning & AI</h3>
+                    <ul>
+                        <li>Deep Learning (TensorFlow, Keras, PyTorch)</li>
+                        <li>Computer Vision (OpenCV, CNN)</li>
+                        <li>NLP & LLMs (Transformers, LangChain)</li>
+                        <li>RAG Systems (Vector DBs, Embeddings)</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Programming & Tools</h3>
+                    <ul>
+                        <li>Python (Expert)</li>
+                        <li>SQL (Intermediate)</li>
+                        <li>Git & GitHub</li>
+                        <li>Docker & Containerization</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Data & Deployment</h3>
+                    <ul>
+                        <li>Pandas, NumPy, Scikit-learn</li>
+                        <li>ChromaDB, Vector Databases</li>
+                        <li>Streamlit, Gradio</li>
+                        <li>Google Colab, GPU Computing</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>MLOps & Production</h3>
+                    <ul>
+                        <li>Model Deployment</li>
+                        <li>Performance Optimization</li>
+                        <li>API Development (FastAPI)</li>
+                        <li>Cloud Platforms (AWS/GCP)</li>
+                    </ul>
+                </div>
+                <!-- EDIT: Add/remove skills as needed -->
+
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2>Get In Touch</h2>
+            <div class="contact-content">
+                <p style="font-size: 1.1rem; color: #555; margin-bottom: 30px;">
+                    I'm always interested in new opportunities and collaborations.
+                    Feel free to reach out!
+                </p>
+
+                <div class="contact-links">
+                    <div class="contact-item">
+                        <div class="contact-icon">📧</div>
+                        <a href="mailto:your.email@example.com">your.email@example.com</a>
+                        <!-- REPLACE: Add your email -->
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">💼</div>
+                        <a href="https://linkedin.com/in/yunusajibrin" target="_blank">LinkedIn</a>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">🐙</div>
+                        <a href="https://github.com/yunusajib" target="_blank">GitHub</a>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">📺</div>
+                        <a href="https://youtu.be/v-ciwaRasvU" target="_blank">YouTube</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Yunusa Jibrin. All rights reserved.</p>
+        <p style="margin-top: 10px; font-size: 0.9rem; opacity: 0.8;">
+            Built with ❤️ | Machine Learning Engineer Portfolio
+        </p>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
