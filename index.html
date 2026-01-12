@@ -30,7 +30,6 @@
         .hero h1 {
             font-size: 3rem;
             margin-bottom: 10px;
-            animation: fadeInDown 1s;
         }
 
         .hero .tagline {
@@ -51,7 +50,6 @@
             gap: 20px;
             justify-content: center;
             flex-wrap: wrap;
-            margin-top: 30px;
         }
 
         .btn {
@@ -61,13 +59,6 @@
             text-decoration: none;
             border-radius: 25px;
             font-weight: bold;
-            transition: transform 0.3s, box-shadow 0.3s;
-            display: inline-block;
-        }
-
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
         }
 
         .btn-secondary {
@@ -95,20 +86,6 @@
             font-size: 2.5rem;
             margin-bottom: 40px;
             color: #667eea;
-            position: relative;
-            padding-bottom: 15px;
-        }
-
-        section h2::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background: #764ba2;
-            border-radius: 2px;
         }
 
         .about-content {
@@ -124,7 +101,6 @@
             border-radius: 50%;
             object-fit: cover;
             border: 5px solid #667eea;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
         }
 
         .about-text {
@@ -138,23 +114,19 @@
             color: #555;
         }
 
-        .about-text strong {
-            color: #667eea;
-        }
-
         .highlight {
             background: #f0f4ff;
             padding: 15px;
             border-left: 4px solid #667eea;
-            margin-top: 15px;
             border-radius: 5px;
+            font-size: 0.95rem;
+            color: #444;
         }
 
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 30px;
-            margin-top: 30px;
         }
 
         .project-card {
@@ -162,24 +134,16 @@
             border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
         }
 
         .project-img {
-            width: 100%;
             height: 200px;
-            object-fit: cover;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             font-weight: bold;
         }
 
@@ -190,13 +154,6 @@
         .project-content h3 {
             color: #667eea;
             margin-bottom: 10px;
-            font-size: 1.4rem;
-        }
-
-        .project-content p {
-            color: #555;
-            margin-bottom: 15px;
-            line-height: 1.6;
         }
 
         .project-highlights {
@@ -207,104 +164,24 @@
             font-size: 0.95rem;
         }
 
-        .project-highlights strong {
-            color: #667eea;
-            display: block;
-            margin-bottom: 8px;
-        }
-
-        .project-highlights ul {
-            list-style: none;
-            padding-left: 0;
-        }
-
-        .project-highlights li {
-            padding: 4px 0;
-            color: #555;
-        }
-
-        .project-highlights li::before {
-            content: "→ ";
-            color: #764ba2;
-            font-weight: bold;
-            margin-right: 5px;
-        }
-
         .project-tags {
             display: flex;
             flex-wrap: wrap;
             gap: 8px;
-            margin: 15px 0;
         }
 
         .tag {
-            background: #f0f0f0;
+            background: #eee;
             padding: 5px 12px;
             border-radius: 15px;
             font-size: 0.85rem;
-            color: #666;
         }
 
-        .project-links {
-            display: flex;
-            gap: 15px;
-            margin-top: 15px;
-            flex-wrap: wrap;
-        }
-
-        .project-link {
+        .project-links a {
             color: #667eea;
             text-decoration: none;
             font-weight: bold;
-            font-size: 0.95rem;
-        }
-
-        .project-link:hover {
-            color: #764ba2;
-        }
-
-        .contact-content {
-            text-align: center;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .contact-links {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-top: 30px;
-            flex-wrap: wrap;
-        }
-
-        .contact-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .contact-item a {
-            color: #667eea;
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        .contact-item a:hover {
-            color: #764ba2;
-        }
-
-        .contact-icon {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.5rem;
-            font-weight: bold;
+            margin-right: 15px;
         }
 
         footer {
@@ -312,19 +189,6 @@
             color: white;
             text-align: center;
             padding: 30px 20px;
-            margin-top: 40px;
-        }
-
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
         }
 
         @media (max-width: 768px) {
@@ -332,28 +196,20 @@
                 font-size: 2rem;
             }
 
-            .hero .tagline {
-                font-size: 1rem;
-            }
-
             .about-content {
                 flex-direction: column;
                 text-align: center;
-            }
-
-            .projects-grid {
-                grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 
 <body>
-    <!-- Hero Section -->
+
     <div class="hero">
         <h1>Yunusa Jibrin</h1>
-        <p class="tagline">AI & Machine Learning Engineer | Production AI Systems</p>
-        <p class="location">📍 Newcastle, UK | 🇬🇧 Global Talent Visa (No Sponsorship Required)</p>
+        <p class="tagline">AI & Machine Learning Engineer | Production-Focused AI Systems</p>
+        <p class="location">📍 Newcastle, UK | 🇬🇧 Global Talent Visa</p>
         <div class="hero-links">
             <a href="#projects" class="btn">View Projects</a>
             <a href="#contact" class="btn btn-secondary">Get In Touch</a>
@@ -361,224 +217,122 @@
     </div>
 
     <div class="container">
-        <!-- About Section -->
+
         <section id="about">
             <h2>About Me</h2>
             <div class="about-content">
-                <img src="my-pic.webp" alt="Yunusa Jibrin" class="profile-img">
+                <img src="my-pic.webp" class="profile-img" alt="Yunusa Jibrin">
                 <div class="about-text">
-                    <p>Hi, I'm Yunusa! I build <strong>production AI systems</strong> that deliver measurable business
-                        impact.</p>
-                    <p>With 3+ years of experience, I specialize in <strong>Computer Vision, NLP, and Multi-Agent
-                            AI</strong>, taking models from research to production. My work includes live systems
-                        handling real traffic: multi-agent platforms preventing $100M+ regulatory violations, enterprise
-                        RAG with 92% precision, and real-time CV APIs deployed on AWS.</p>
-                    <p>I'm particularly passionate about <strong>LLMs, prompt engineering, and agentic
-                            workflows</strong>
-                        — building systems that don't just work in notebooks, but solve real-world problems at scale.
+                    <p>
+                        I’m an AI & Machine Learning Engineer focused on building
+                        <strong>production-style AI systems</strong> that demonstrate real-world applicability.
+                    </p>
+                    <p>
+                        My work spans <strong>LLMs, Computer Vision, NLP, and Multi-Agent systems</strong>,
+                        with an emphasis on deployment-ready architectures, evaluation, and system design.
                     </p>
 
                     <div class="highlight">
-                        <strong>Recent Focus:</strong> Advanced RAG architectures, multi-agent orchestration with
-                        CrewAI, and production-grade prompt optimization that reduces AI hallucinations 80%+ (15% → 3%).
+                        <strong>Note:</strong> All projects on this site are personal portfolio projects.
+                        Metrics are derived from controlled experiments, benchmarks, and simulated workflows,
+                        not from paid client or company deployments.
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Projects Section -->
         <section id="projects">
             <h2>Featured Projects</h2>
             <div class="projects-grid">
-                <!-- Pharma AI Multi-Agent System -->
-                <div class="project-card">
-                    <div class="project-img">💊 Healthcare AI & Compliance</div>
-                    <div class="project-content">
-                        <h3>Pharma AI Platform</h3>
-                        <p>
-                            Production-grade multi-agent system preventing $100M+ regulatory violations with 95%+
-                            accuracy. Features real-time compliance detection, AI-powered sales coaching, and
-                            conversation intelligence with 6-dimension scoring.
-                        </p>
 
+                <div class="project-card">
+                    <div class="project-img">💊 Healthcare AI (Simulated)</div>
+                    <div class="project-content">
+                        <h3>Pharma AI Compliance Platform</h3>
+                        <p>
+                            A simulated multi-agent AI system designed to detect regulatory risks in pharmaceutical
+                            sales conversations using rule-based and LLM-driven checks.
+                        </p>
                         <div class="project-highlights">
-                            <strong>Key Achievements:</strong>
                             <ul>
-                                <li>Zero violations in 500+ production queries</li>
-                                <li>$2.85M annual value for 100-rep organizations</li>
-                                <li>Sub-second compliance blocking (3-layer detection)</li>
-                                <li>Hallucination mitigation: 15% → 3% error rate</li>
-                                <li>Few-shot learning: 1.2-4.8 scoring differentiation</li>
+                                <li>Multi-agent architecture for compliance detection and feedback</li>
+                                <li>Evaluation performed on synthetic and curated test conversations</li>
+                                <li>Designed to minimize hallucinations through prompt constraints</li>
                             </ul>
                         </div>
-
                         <div class="project-tags">
-                            <span class="tag">GPT-4o-mini</span>
-                            <span class="tag">FastAPI</span>
-                            <span class="tag">Next.js 14</span>
                             <span class="tag">CrewAI</span>
-                            <span class="tag">TypeScript</span>
-                            <span class="tag">Vercel</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/yunusajib/pharma-ai-platform" class="project-link"
-                                target="_blank">GitHub →</a>
-                            <a href="https://pharma-ai-platform-ox5p.vercel.app" class="project-link"
-                                target="_blank">Live Demo →</a>
-                            <a href="https://pharma-ai-backend-1dlq.onrender.com/docs" class="project-link"
-                                target="_blank">API Docs →</a>
+                            <span class="tag">FastAPI</span>
+                            <span class="tag">Next.js</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Contract Intelligence System -->
                 <div class="project-card">
-                    <div class="project-img">🤖 LLM & Multi-Agent AI</div>
+                    <div class="project-img">🤖 LLM Agents</div>
                     <div class="project-content">
                         <h3>Contract Intelligence System</h3>
                         <p>
-                            Multi-agent AI platform reducing legal contract review time 95% (2hr → 6min), delivering
-                            $200K/year in cost savings. Deployed on AWS ECS with CrewAI orchestration, handling real
-                            production traffic 24/7.
+                            A personal project exploring how multi-agent LLM workflows can assist
+                            with contract analysis, risk extraction, and summarization.
                         </p>
-
                         <div class="project-highlights">
-                            <strong>Key Achievements:</strong>
                             <ul>
-                                <li>95% time reduction: 2 hours → 6 minutes per contract</li>
-                                <li>$200K/year cost savings for law firms</li>
-                                <li>Multi-agent workflow: Extraction → Risk → Summary</li>
-                                <li>Production uptime: 99.5% (4+ months live)</li>
-                                <li>AWS ECS deployment with systemd management</li>
+                                <li>Multi-stage agent workflow (extract → analyze → summarize)</li>
+                                <li>Latency and accuracy evaluated on sample legal documents</li>
+                                <li>Deployed as a demo API using FastAPI and Docker</li>
                             </ul>
                         </div>
-
                         <div class="project-tags">
                             <span class="tag">CrewAI</span>
-                            <span class="tag">GPT-4o</span>
                             <span class="tag">FastAPI</span>
-                            <span class="tag">AWS ECS</span>
                             <span class="tag">Docker</span>
-                            <span class="tag">systemd</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/yunusajib/contract-intelligent-system" class="project-link"
-                                target="_blank">GitHub →</a>
-                            <a href="http://98.92.51.141:8000" class="project-link" target="_blank">Live Demo →</a>
-                            <a href="http://98.92.51.141:8000/docs" class="project-link" target="_blank">API Docs →</a>
                         </div>
                     </div>
                 </div>
 
-                <!-- QwenRAG PDF Search -->
                 <div class="project-card">
-                    <div class="project-img">🧠 NLP & Advanced RAG</div>
+                    <div class="project-img">🧠 RAG Systems</div>
                     <div class="project-content">
                         <h3>QwenRAG PDF Search</h3>
                         <p>
-                            Enterprise RAG system achieving 92% retrieval precision and 94% citation accuracy using
-                            hybrid search (dense + sparse embeddings). Built with LangChain orchestration and ChromaDB
-                            vector storage.
+                            Retrieval-Augmented Generation system built to experiment with
+                            hybrid search strategies across long-form PDF documents.
                         </p>
-
                         <div class="project-highlights">
-                            <strong>Key Achievements:</strong>
                             <ul>
-                                <li>92% retrieval precision with hybrid search</li>
-                                <li>94% citation accuracy (proper attribution)</li>
-                                <li>Sub-second latency (300ms p95)</li>
-                                <li>Multi-hop reasoning across documents</li>
-                                <li>Optimized chunking for context retention</li>
+                                <li>Hybrid dense + sparse retrieval evaluation</li>
+                                <li>Manual precision and citation checks on test queries</li>
+                                <li>Optimized chunking strategies for context retention</li>
                             </ul>
                         </div>
-
                         <div class="project-tags">
                             <span class="tag">LangChain</span>
                             <span class="tag">ChromaDB</span>
-                            <span class="tag">Qwen2.5</span>
-                            <span class="tag">FAISS</span>
-                            <span class="tag">Transformers</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/yunusajib/QwenRAG-PDF-Search" class="project-link"
-                                target="_blank">GitHub →</a>
+                            <span class="tag">Qwen</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- YOLO Pothole Detection API -->
                 <div class="project-card">
-                    <div class="project-img">🚗 MLOps & Computer Vision</div>
+                    <div class="project-img">🚗 Computer Vision</div>
                     <div class="project-content">
                         <h3>YOLO Pothole Detection API</h3>
                         <p>
-                            Real-time pothole detection API achieving 87% mAP on custom dataset (3,500 images).
-                            Optimized inference 3x (PyTorch → ONNX) and deployed on AWS ECS for production scalability.
+                            End-to-end computer vision pipeline for pothole detection,
+                            trained and evaluated on a custom-labeled dataset.
                         </p>
-
                         <div class="project-highlights">
-                            <strong>Key Achievements:</strong>
                             <ul>
-                                <li>87% mAP on custom YOLOv8 model</li>
-                                <li>3x inference speedup (PyTorch → ONNX)</li>
-                                <li>Production deployment on AWS ECS + Docker</li>
-                                <li>Real-time monitoring with feedback loops</li>
-                                <li>Streamlit demo for stakeholders</li>
+                                <li>YOLOv8 model trained on ~3,500 images</li>
+                                <li>Inference optimization via ONNX</li>
+                                <li>Deployed as a demo API with FastAPI</li>
                             </ul>
                         </div>
-
                         <div class="project-tags">
                             <span class="tag">YOLOv8</span>
                             <span class="tag">PyTorch</span>
                             <span class="tag">ONNX</span>
-                            <span class="tag">FastAPI</span>
-                            <span class="tag">AWS ECS</span>
-                            <span class="tag">Streamlit</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/yunusajib/yolo-pothole-detector" class="project-link"
-                                target="_blank">GitHub →</a>
-                            <a href="http://13.220.63.113:8000/docs" class="project-link" target="_blank">Live API →</a>
-                            <a href="https://yolo-pothole-detector.streamlit.app/" class="project-link"
-                                target="_blank">Live Demo →</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Multi-Task Facial Attribute Prediction -->
-                <div class="project-card">
-                    <div class="project-img">🎭 Deep Learning & CV</div>
-                    <div class="project-content">
-                        <h3>Multi-Task Facial Attributes</h3>
-                        <p>
-                            Progressive CNN with multi-task learning achieving 84.9% gender accuracy. Fixed class
-                            collapse issue (2/5 → 5/5 classes) and reduced overfitting 63% through task-specific
-                            learning rates.
-                        </p>
-
-                        <div class="project-highlights">
-                            <strong>Key Achievements:</strong>
-                            <ul>
-                                <li>Fixed class collapse: +221% F1 improvement</li>
-                                <li>Reduced overfitting: 4x → 1.5x train/val gap</li>
-                                <li>Task-specific learning rates for stability</li>
-                                <li>Applied focal loss + gradient clipping</li>
-                                <li>Live Streamlit demo for predictions</li>
-                            </ul>
-                        </div>
-
-                        <div class="project-tags">
-                            <span class="tag">TensorFlow</span>
-                            <span class="tag">Keras</span>
-                            <span class="tag">Multi-Task Learning</span>
-                            <span class="tag">CNNs</span>
-                            <span class="tag">Streamlit</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/yunusajib/age-detection-ml" class="project-link"
-                                target="_blank">GitHub →</a>
-                            <a href="https://age-detection-ml.streamlit.app/" class="project-link" target="_blank">Live
-                                Demo →</a>
                         </div>
                     </div>
                 </div>
@@ -586,35 +340,21 @@
             </div>
         </section>
 
-        <!-- Contact Section -->
         <section id="contact">
-            <h2>Contact Me</h2>
-            <div class="contact-content">
-                <p style="font-size: 1.1rem; color: #555; margin-bottom: 20px;">
-                    Let's connect — I'm always open to opportunities and collaborations.
-                </p>
-                <div class="contact-links">
-                    <div class="contact-item">
-                        <div class="contact-icon">📧</div>
-                        <a href="mailto:yunusajib01@gmail.com">yunusajib01@gmail.com</a>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">💼</div>
-                        <a href="https://www.linkedin.com/in/yunusajibrin/" target="_blank">LinkedIn Profile</a>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">🐙</div>
-                        <a href="https://github.com/yunusajib" target="_blank">GitHub Profile</a>
-                    </div>
-                </div>
-            </div>
+            <h2>Contact</h2>
+            <p style="text-align:center;">
+                📧 <a href="mailto:yunusajib01@gmail.com">yunusajib01@gmail.com</a> |
+                💼 <a href="https://www.linkedin.com/in/yunusajibrin/">LinkedIn</a> |
+                🐙 <a href="https://github.com/yunusajib">GitHub</a>
+            </p>
         </section>
 
     </div>
 
     <footer>
-        <p>&copy; 2025 Yunusa Jibrin. All rights reserved.</p>
+        <p>&copy; 2025 Yunusa Jibrin</p>
     </footer>
+
 </body>
 
 </html>
